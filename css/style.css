@@ -336,7 +336,7 @@ input, textarea, select {
     position: relative;
     height: 100vh;
     min-height: 600px;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('https://pixabay.com/get/gd57eb4db6552ffbeccb28c883ec9fe815c5199e0e7b178d853dfa779acc8a3babeb14f4cc9dd7673d9a822128f389e509dab2063e8b5877b4afe155cbe942056_1280.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('https://cdn.pixabay.com/photo/2017/06/11/10/46/truck-2391940_1280.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -541,7 +541,7 @@ input, textarea, select {
 ========================================== */
 .testimonials {
     padding: var(--section-padding);
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://pixabay.com/get/g3aa2047e98047810ffbad91919d47ce81f0a0c56d82e4c9ea3014cce18a46020bec8bf500cfa582f8099dd0c04c59d52abd27e3b4454e45334ce2f44940d6e00_1280.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://cdn.eso.org/images/screen/vlt-mw-potw.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
