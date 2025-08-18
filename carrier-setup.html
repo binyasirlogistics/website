@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrier Setup - Join Binyasir Logistics Network | Professional Dispatching</title>
-    <meta name="description" content="Join the Binyasir Logistics carrier network and access professional dispatching services, premium loads, and dedicated support for your trucking business.">
-    <meta name="keywords" content="carrier setup, join Binyasir Logistics, truck dispatcher network, carrier registration, professional dispatching">
+    <title>Carrier Setup - TruckFlow</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -13,7 +13,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <h2>Binyasir Logistics</h2>
+                <h2>TruckFlow</h2>
             </div>
             <ul class="nav-menu">
                 <li class="nav-item">
@@ -26,13 +26,13 @@
                     <a href="services.html" class="nav-link">Services</a>
                 </li>
                 <li class="nav-item">
-                    <a href="contact.html" class="nav-link">Contact</a>
+                    <a href="carrier-setup.html" class="nav-link active">Carrier Setup</a>
                 </li>
                 <li class="nav-item">
-                    <a href="carrier-setup.html" class="nav-link cta-nav active">Carrier Setup</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
                 </li>
             </ul>
-            <div class="nav-toggle">
+            <div class="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -43,446 +43,324 @@
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1 class="animate-on-scroll">Join Our Carrier Network</h1>
-            <p class="animate-on-scroll">Partner with Binyasir Logistics for professional dispatching and premium freight opportunities</p>
+            <h1 class="animate-on-scroll">Carrier Setup</h1>
+            <p class="animate-on-scroll">Get started with professional dispatching in 3 easy steps</p>
+        </div>
+    </section>
+
+    <!-- Setup Process -->
+    <section class="setup-process">
+        <div class="container">
+            <div class="process-steps">
+                <div class="process-step-header animate-on-scroll">
+                    <div class="step-indicator active" data-step="1">
+                        <span>1</span>
+                        <p>Basic Info</p>
+                    </div>
+                    <div class="step-indicator" data-step="2">
+                        <span>2</span>
+                        <p>Documents</p>
+                    </div>
+                    <div class="step-indicator" data-step="3">
+                        <span>3</span>
+                        <p>Preferences</p>
+                    </div>
+                </div>
+
+                <form class="setup-form" id="carrierSetupForm">
+                    <!-- Step 1: Basic Information -->
+                    <div class="form-step active" id="step1">
+                        <div class="step-content animate-on-scroll">
+                            <h2>Basic Information</h2>
+                            <p>Let's start with your company details</p>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="companyName">Company/Business Name *</label>
+                                    <input type="text" id="companyName" name="companyName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="dba">DBA (if different)</label>
+                                    <input type="text" id="dba" name="dba">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contactName">Primary Contact Name *</label>
+                                    <input type="text" id="contactName" name="contactName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="title">Title/Position</label>
+                                    <input type="text" id="title" name="title">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="phone">Phone Number *</label>
+                                    <input type="tel" id="phone" name="phone" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="address">Business Address *</label>
+                                <input type="text" id="address" name="address" required>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="city">City *</label>
+                                    <input type="text" id="city" name="city" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="state">State *</label>
+                                    <select id="state" name="state" required>
+                                        <option value="">Select State...</option>
+                                        <option value="AL">Alabama</option>
+                                        <option value="AK">Alaska</option>
+                                        <option value="AZ">Arizona</option>
+                                        <!-- Add more states as needed -->
+                                        <option value="TX">Texas</option>
+                                        <option value="FL">Florida</option>
+                                        <option value="CA">California</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="zip">ZIP Code *</label>
+                                    <input type="text" id="zip" name="zip" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Documentation -->
+                    <div class="form-step" id="step2">
+                        <div class="step-content animate-on-scroll">
+                            <h2>Required Documentation</h2>
+                            <p>Upload or provide details for the following required documents</p>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="mcNumber">MC Number *</label>
+                                    <input type="text" id="mcNumber" name="mcNumber" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="dotNumber">DOT Number *</label>
+                                    <input type="text" id="dotNumber" name="dotNumber" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="insuranceCarrier">Insurance Carrier *</label>
+                                <input type="text" id="insuranceCarrier" name="insuranceCarrier" required>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="policyNumber">Policy Number *</label>
+                                    <input type="text" id="policyNumber" name="policyNumber" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="coverageAmount">Coverage Amount *</label>
+                                    <select id="coverageAmount" name="coverageAmount" required>
+                                        <option value="">Select...</option>
+                                        <option value="1000000">$1,000,000</option>
+                                        <option value="2000000">$2,000,000</option>
+                                        <option value="5000000">$5,000,000</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="expirationDate">Insurance Expiration *</label>
+                                    <input type="date" id="expirationDate" name="expirationDate" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ein">Federal EIN *</label>
+                                    <input type="text" id="ein" name="ein" required>
+                                </div>
+                            </div>
+
+                            <div class="document-upload">
+                                <h4>Document Upload</h4>
+                                <p>Please upload the following documents:</p>
+                                <div class="upload-grid">
+                                    <div class="upload-item">
+                                        <label for="insuranceCert">Insurance Certificate</label>
+                                        <input type="file" id="insuranceCert" name="insuranceCert" accept=".pdf,.jpg,.png">
+                                    </div>
+                                    <div class="upload-item">
+                                        <label for="mcAuthority">MC Authority</label>
+                                        <input type="file" id="mcAuthority" name="mcAuthority" accept=".pdf,.jpg,.png">
+                                    </div>
+                                    <div class="upload-item">
+                                        <label for="w9Form">W9 Form</label>
+                                        <input type="file" id="w9Form" name="w9Form" accept=".pdf,.jpg,.png">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Preferences -->
+                    <div class="form-step" id="step3">
+                        <div class="step-content animate-on-scroll">
+                            <h2>Service Preferences</h2>
+                            <p>Help us customize our service to your specific needs</p>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="fleetSize">Number of Trucks *</label>
+                                    <select id="fleetSize" name="fleetSize" required>
+                                        <option value="">Select...</option>
+                                        <option value="1">1 Truck</option>
+                                        <option value="2-5">2-5 Trucks</option>
+                                        <option value="6-10">6-10 Trucks</option>
+                                        <option value="11-20">11-20 Trucks</option>
+                                        <option value="21+">21+ Trucks</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="truckType">Truck Type *</label>
+                                    <select id="truckType" name="truckType" required>
+                                        <option value="">Select...</option>
+                                        <option value="dry-van">Dry Van</option>
+                                        <option value="reefer">Reefer</option>
+                                        <option value="flatbed">Flatbed</option>
+                                        <option value="step-deck">Step Deck</option>
+                                        <option value="lowboy">Lowboy</option>
+                                        <option value="tanker">Tanker</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="operatingRegions">Preferred Operating Regions</label>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="regions" value="southeast">
+                                        <span class="checkmark"></span>
+                                        Southeast
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="regions" value="southwest">
+                                        <span class="checkmark"></span>
+                                        Southwest
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="regions" value="midwest">
+                                        <span class="checkmark"></span>
+                                        Midwest
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="regions" value="northeast">
+                                        <span class="checkmark"></span>
+                                        Northeast
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="regions" value="west">
+                                        <span class="checkmark"></span>
+                                        West Coast
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="regions" value="nationwide">
+                                        <span class="checkmark"></span>
+                                        Nationwide
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="pricingModel">Pricing Model *</label>
+                                    <select id="pricingModel" name="pricingModel" required>
+                                        <option value="">Select...</option>
+                                        <option value="percentage">8% of Gross (Most Popular)</option>
+                                        <option value="per-load">$75 Per Load</option>
+                                        <option value="weekly">$300 Per Week</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="startDate">Preferred Start Date</label>
+                                    <input type="date" id="startDate" name="startDate">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="specialRequests">Special Requirements or Notes</label>
+                                <textarea id="specialRequests" name="specialRequests" rows="4" placeholder="Any specific requirements, restrictions, or notes we should know about..."></textarea>
+                            </div>
+
+                            <div class="agreement-section">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="terms" required>
+                                    <span class="checkmark"></span>
+                                    I agree to the Terms of Service and Privacy Policy
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="communications">
+                                    <span class="checkmark"></span>
+                                    I consent to receiving communications about my account and services
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-secondary" id="prevBtn" style="display: none;">Previous</button>
+                        <button type="button" class="btn btn-primary" id="nextBtn">Next</button>
+                        <button type="submit" class="btn btn-primary" id="submitBtn" style="display: none;">Complete Setup</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </section>
 
     <!-- Benefits Section -->
-    <section class="carrier-benefits">
+    <section class="setup-benefits">
         <div class="container">
             <div class="section-header animate-on-scroll">
-                <h2>Why Partner with Binyasir Logistics?</h2>
-                <p>Exclusive benefits for our carrier partners</p>
-            </div>
-            <div class="benefits-grid">
-                <div class="benefit-card animate-on-scroll">
-                    <div class="benefit-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                            <path d="m2 17 10 5 10-5"></path>
-                            <path d="m2 12 10 5 10-5"></path>
-                        </svg>
-                    </div>
-                    <h3>Premium Loads</h3>
-                    <p>Access to high-paying freight from our network of trusted shippers and brokers.</p>
-                </div>
-                <div class="benefit-card animate-on-scroll">
-                    <div class="benefit-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <polyline points="12,6 12,12 16,14"></polyline>
-                        </svg>
-                    </div>
-                    <h3>24/7 Dispatch Support</h3>
-                    <p>Professional dispatchers available around the clock to keep your trucks moving.</p>
-                </div>
-                <div class="benefit-card animate-on-scroll">
-                    <div class="benefit-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
-                        </svg>
-                    </div>
-                    <h3>Route Optimization</h3>
-                    <p>Advanced route planning to maximize efficiency and reduce deadhead miles.</p>
-                </div>
-                <div class="benefit-card animate-on-scroll">
-                    <div class="benefit-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
-                            <line x1="1" y1="10" x2="23" y2="10"></line>
-                        </svg>
-                    </div>
-                    <h3>Fast Payments</h3>
-                    <p>Quick and reliable payment processing with transparent invoicing.</p>
-                </div>
-                <div class="benefit-card animate-on-scroll">
-                    <div class="benefit-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"></polyline>
-                        </svg>
-                    </div>
-                    <h3>Real-time Tracking</h3>
-                    <p>Advanced GPS tracking and monitoring for better fleet management.</p>
-                </div>
-                <div class="benefit-card animate-on-scroll">
-                    <div class="benefit-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="9" cy="7" r="4"></circle>
-                            <path d="m22 21-3-3m0 0a5.5 5.5 0 1 0-7.78-7.78 5.5 5.5 0 0 0 7.78 7.78Z"></path>
-                        </svg>
-                    </div>
-                    <h3>Dedicated Support</h3>
-                    <p>Personal account managers and experienced support team for your success.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Requirements Section -->
-    <section class="requirements-section">
-        <div class="container">
-            <div class="requirements-content">
-                <div class="requirements-text animate-on-scroll">
-                    <h2>Carrier Requirements</h2>
-                    <p>To ensure the highest standards of service and safety, we have the following requirements for our carrier partners:</p>
-                    <ul class="requirements-list">
-                        <li>Valid DOT and MC numbers</li>
-                        <li>Current commercial auto insurance (minimum $1M)</li>
-                        <li>Cargo insurance (minimum $100K)</li>
-                        <li>Clean safety record and compliance history</li>
-                        <li>Professional drivers with valid CDL</li>
-                        <li>Reliable communication equipment</li>
-                        <li>GPS tracking capability</li>
-                        <li>ELD compliance</li>
-                    </ul>
-                    <p class="requirements-note">Don't meet all requirements yet? Contact us to discuss how we can help you get qualified.</p>
-                </div>
-                <div class="requirements-image animate-on-scroll">
-                    <img src="https://pixabay.com/get/gf3e7ecc14cd993bd48da2ad2c77dc5d833c0a6ab0793e2988db2537c97499324349e252a7467a5b6393d94d79619aa90a0b36925394cdcae8c42a14353f51d0d_1280.jpg" alt="Professional trucking requirements" loading="lazy">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Carrier Setup Form -->
-    <section class="carrier-form-section">
-        <div class="container">
-            <div class="form-header animate-on-scroll">
-                <h2>Carrier Registration Form</h2>
-                <p>Complete the form below to start your partnership with Binyasir Logistics</p>
+                <h2>What Happens After Setup?</h2>
+                <p>Your journey to maximized revenue starts here</p>
             </div>
             
-            <form id="carrierForm" class="carrier-form animate-on-scroll">
-                <!-- Company Information -->
-                <div class="form-section">
-                    <h3>Company Information</h3>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="companyName">Company Name *</label>
-                            <input type="text" id="companyName" name="companyName" required>
-                            <span class="error-message"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="dbaName">DBA Name</label>
-                            <input type="text" id="dbaName" name="dbaName">
-                        </div>
+            <div class="benefits-grid">
+                <div class="benefit-item animate-on-scroll">
+                    <div class="benefit-icon">
+                        <i class="fas fa-user-check"></i>
                     </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="dotNumber">DOT Number *</label>
-                            <input type="text" id="dotNumber" name="dotNumber" required>
-                            <span class="error-message"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="mcNumber">MC Number *</label>
-                            <input type="text" id="mcNumber" name="mcNumber" required>
-                            <span class="error-message"></span>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="federalId">Federal Tax ID *</label>
-                            <input type="text" id="federalId" name="federalId" required>
-                            <span class="error-message"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="businessYears">Years in Business *</label>
-                            <select id="businessYears" name="businessYears" required>
-                                <option value="">Select years</option>
-                                <option value="less-than-1">Less than 1 year</option>
-                                <option value="1-2">1-2 years</option>
-                                <option value="3-5">3-5 years</option>
-                                <option value="6-10">6-10 years</option>
-                                <option value="more-than-10">More than 10 years</option>
-                            </select>
-                            <span class="error-message"></span>
-                        </div>
-                    </div>
+                    <h3>Account Verification</h3>
+                    <p>We'll verify your documents and set up your account within 24 hours of submission.</p>
                 </div>
-
-                <!-- Contact Information -->
-                <div class="form-section">
-                    <h3>Primary Contact Information</h3>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="contactName">Contact Name *</label>
-                            <input type="text" id="contactName" name="contactName" required>
-                            <span class="error-message"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="contactTitle">Title</label>
-                            <input type="text" id="contactTitle" name="contactTitle">
-                        </div>
+                
+                <div class="benefit-item animate-on-scroll">
+                    <div class="benefit-icon">
+                        <i class="fas fa-phone"></i>
                     </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="contactPhone">Phone Number *</label>
-                            <input type="tel" id="contactPhone" name="contactPhone" required>
-                            <span class="error-message"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="contactEmail">Email Address *</label>
-                            <input type="email" id="contactEmail" name="contactEmail" required>
-                            <span class="error-message"></span>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="businessAddress">Business Address *</label>
-                        <textarea id="businessAddress" name="businessAddress" rows="3" required></textarea>
-                        <span class="error-message"></span>
-                    </div>
+                    <h3>Welcome Call</h3>
+                    <p>Your dedicated dispatcher will call to introduce themselves and discuss your preferences.</p>
                 </div>
-
-                <!-- Fleet Information -->
-                <div class="form-section">
-                    <h3>Fleet Information</h3>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="fleetSize">Number of Power Units *</label>
-                            <select id="fleetSize" name="fleetSize" required>
-                                <option value="">Select fleet size</option>
-                                <option value="1">1 truck</option>
-                                <option value="2-5">2-5 trucks</option>
-                                <option value="6-10">6-10 trucks</option>
-                                <option value="11-25">11-25 trucks</option>
-                                <option value="26-50">26-50 trucks</option>
-                                <option value="50+">50+ trucks</option>
-                            </select>
-                            <span class="error-message"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="trailerCount">Number of Trailers</label>
-                            <input type="number" id="trailerCount" name="trailerCount" min="0">
-                        </div>
+                
+                <div class="benefit-item animate-on-scroll">
+                    <div class="benefit-icon">
+                        <i class="fas fa-truck-loading"></i>
                     </div>
-
-                    <div class="form-group">
-                        <label for="equipmentTypes">Equipment Types (Check all that apply)</label>
-                        <div class="checkbox-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="equipmentTypes" value="dry-van">
-                                <span class="checkmark"></span>
-                                Dry Van
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="equipmentTypes" value="reefer">
-                                <span class="checkmark"></span>
-                                Refrigerated
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="equipmentTypes" value="flatbed">
-                                <span class="checkmark"></span>
-                                Flatbed
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="equipmentTypes" value="step-deck">
-                                <span class="checkmark"></span>
-                                Step Deck
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="equipmentTypes" value="lowboy">
-                                <span class="checkmark"></span>
-                                Lowboy
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="equipmentTypes" value="tanker">
-                                <span class="checkmark"></span>
-                                Tanker
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="operatingStates">Primary Operating States/Regions *</label>
-                        <textarea id="operatingStates" name="operatingStates" rows="3" placeholder="List the states or regions where you primarily operate" required></textarea>
-                        <span class="error-message"></span>
-                    </div>
+                    <h3>First Load</h3>
+                    <p>We'll start finding high-paying loads that match your route and equipment specifications.</p>
                 </div>
-
-                <!-- Insurance Information -->
-                <div class="form-section">
-                    <h3>Insurance Information</h3>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="insuranceCompany">Insurance Company *</label>
-                            <input type="text" id="insuranceCompany" name="insuranceCompany" required>
-                            <span class="error-message"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="policyNumber">Policy Number *</label>
-                            <input type="text" id="policyNumber" name="policyNumber" required>
-                            <span class="error-message"></span>
-                        </div>
+                
+                <div class="benefit-item animate-on-scroll">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-trending-up"></i>
                     </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="liabilityCoverage">Liability Coverage Amount *</label>
-                            <select id="liabilityCoverage" name="liabilityCoverage" required>
-                                <option value="">Select coverage</option>
-                                <option value="1000000">$1,000,000</option>
-                                <option value="1500000">$1,500,000</option>
-                                <option value="2000000">$2,000,000</option>
-                                <option value="5000000">$5,000,000</option>
-                                <option value="other">Other</option>
-                            </select>
-                            <span class="error-message"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="cargoCoverage">Cargo Coverage Amount *</label>
-                            <select id="cargoCoverage" name="cargoCoverage" required>
-                                <option value="">Select coverage</option>
-                                <option value="100000">$100,000</option>
-                                <option value="250000">$250,000</option>
-                                <option value="500000">$500,000</option>
-                                <option value="1000000">$1,000,000</option>
-                                <option value="other">Other</option>
-                            </select>
-                            <span class="error-message"></span>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="expirationDate">Policy Expiration Date *</label>
-                        <input type="date" id="expirationDate" name="expirationDate" required>
-                        <span class="error-message"></span>
-                    </div>
-                </div>
-
-                <!-- Service Preferences -->
-                <div class="form-section">
-                    <h3>Service Preferences</h3>
-                    <div class="form-group">
-                        <label for="serviceTypes">Services Interested In (Check all that apply)</label>
-                        <div class="checkbox-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="serviceTypes" value="dispatching">
-                                <span class="checkmark"></span>
-                                Professional Dispatching
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="serviceTypes" value="load-planning">
-                                <span class="checkmark"></span>
-                                Load Planning
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="serviceTypes" value="route-optimization">
-                                <span class="checkmark"></span>
-                                Route Optimization
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="serviceTypes" value="fleet-management">
-                                <span class="checkmark"></span>
-                                Fleet Management
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="serviceTypes" value="fuel-management">
-                                <span class="checkmark"></span>
-                                Fuel Management
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="preferredLanes">Preferred Freight Lanes</label>
-                            <textarea id="preferredLanes" name="preferredLanes" rows="3" placeholder="Describe your preferred shipping lanes or routes"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="specialRequirements">Special Requirements or Notes</label>
-                            <textarea id="specialRequirements" name="specialRequirements" rows="3" placeholder="Any special requirements, hazmat certifications, or additional information"></textarea>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Terms and Conditions -->
-                <div class="form-section">
-                    <div class="form-group checkbox-group">
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="termsAgreement" name="termsAgreement" required>
-                            <span class="checkmark"></span>
-                            I certify that all information provided is accurate and agree to the terms and conditions of partnership with Binyasir Logistics *
-                        </label>
-                        <span class="error-message"></span>
-                    </div>
-                    
-                    <div class="form-group checkbox-group">
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="backgroundCheck" name="backgroundCheck" required>
-                            <span class="checkmark"></span>
-                            I authorize Binyasir Logistics to conduct background checks and verify all provided information *
-                        </label>
-                        <span class="error-message"></span>
-                    </div>
-
-                    <div class="form-group checkbox-group">
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="marketingConsent" name="marketingConsent">
-                            <span class="checkmark"></span>
-                            I agree to receive marketing communications and updates from Binyasir Logistics
-                        </label>
-                    </div>
-                </div>
-
-                <div class="form-submit-section">
-                    <button type="submit" class="btn btn-primary form-submit">
-                        <span class="btn-text">Submit Application</span>
-                        <span class="btn-loader" style="display: none;">Processing...</span>
-                    </button>
-                    <p class="submit-note">*By submitting this form, you agree to our terms of service and privacy policy. We will review your application and contact you within 24-48 hours.</p>
-                </div>
-            </form>
-
-            <div class="form-success" id="carrierFormSuccess" style="display: none;">
-                <div class="success-icon">
-                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </svg>
-                </div>
-                <h3>Application Submitted Successfully!</h3>
-                <p>Thank you for your interest in partnering with Binyasir Logistics. We have received your carrier application and will review it within 24-48 hours.</p>
-                <p>Our team will contact you soon to discuss the next steps in the onboarding process.</p>
-                <div class="success-actions">
-                    <a href="contact.html" class="btn btn-primary">Contact Us</a>
-                    <a href="index.html" class="btn btn-outline">Back to Home</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Next Steps -->
-    <section class="next-steps">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <h2>What Happens Next?</h2>
-                <p>Our simple onboarding process</p>
-            </div>
-            <div class="steps-grid">
-                <div class="step-item animate-on-scroll">
-                    <div class="step-number">1</div>
-                    <h3>Application Review</h3>
-                    <p>We review your application and verify all provided information within 24-48 hours.</p>
-                </div>
-                <div class="step-item animate-on-scroll">
-                    <div class="step-number">2</div>
-                    <h3>Documentation</h3>
-                    <p>Submit required documents including insurance certificates, DOT registration, and safety records.</p>
-                </div>
-                <div class="step-item animate-on-scroll">
-                    <div class="step-number">3</div>
-                    <h3>Setup & Training</h3>
-                    <p>Complete system setup, integration, and receive training on our dispatch processes.</p>
-                </div>
-                <div class="step-item animate-on-scroll">
-                    <div class="step-number">4</div>
-                    <h3>Start Hauling</h3>
-                    <p>Begin receiving dispatched loads and start maximizing your revenue with our support.</p>
+                    <h3>Revenue Growth</h3>
+                    <p>Watch your revenue increase with our expert load selection and rate negotiation.</p>
                 </div>
             </div>
         </div>
@@ -493,28 +371,16 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Binyasir Logistics</h3>
-                    <p>Your trusted partner for professional truck dispatching and logistics solutions nationwide.</p>
-                    <div class="footer-social">
-                        <a href="#" aria-label="Facebook">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                            </svg>
-                        </a>
-                        <a href="#" aria-label="LinkedIn">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                            </svg>
-                        </a>
-                    </div>
+                    <h3>TruckFlow</h3>
+                    <p>Professional truck dispatching services to maximize your revenue and streamline your operations.</p>
                 </div>
                 <div class="footer-section">
                     <h4>Services</h4>
                     <ul>
-                        <li><a href="services.html">Truck Dispatching</a></li>
-                        <li><a href="services.html">Fleet Management</a></li>
-                        <li><a href="services.html">Route Optimization</a></li>
                         <li><a href="services.html">Load Planning</a></li>
+                        <li><a href="services.html">Route Optimization</a></li>
+                        <li><a href="services.html">Documentation</a></li>
+                        <li><a href="services.html">Support</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -523,31 +389,25 @@
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="contact.html">Contact</a></li>
                         <li><a href="carrier-setup.html">Carrier Setup</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Contact Info</h4>
-                    <div class="contact-info">
-                        <p>📞 1-800-BINYASIR</p>
-                        <p>✉️ info@binyasirlogistics.com</p>
-                        <p>📍 Nationwide Service</p>
-                    </div>
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-phone"></i> 1-800-TRUCK-FLOW</p>
+                    <p><i class="fas fa-envelope"></i> info@truckflow.com</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Binyasir Logistics. All rights reserved.</p>
+                <p>&copy; 2025 TruckFlow. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTop" aria-label="Back to top">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="18,15 12,9 6,15"></polyline>
-        </svg>
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
     </button>
 
-    <script src="js/main.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
