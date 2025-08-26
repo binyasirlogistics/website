@@ -1,7 +1,7 @@
 // Main JavaScript functionality for TruckFlow website
 
 // DOM Content Loaded
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Initialize all functions
     initNavigation();
     initScrollAnimations();
@@ -21,7 +21,7 @@ function initNavigation() {
 
     // Mobile menu toggle
     if (hamburger) {
-        hamburger.addEventListener('click', function() {
+        hamburger.addEventListener('click', function () {
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
         });
@@ -36,7 +36,7 @@ function initNavigation() {
     });
 
     // Navbar scroll effect
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
         if (window.scrollY > 100) {
             navbar.classList.add('scrolled');
         } else {
@@ -52,7 +52,7 @@ function initNavigation() {
 function updateActiveNavLink() {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const navLinks = document.querySelectorAll('.nav-link');
-    
+
     navLinks.forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href') === currentPage) {
@@ -68,7 +68,7 @@ function initScrollAnimations() {
         rootMargin: '0px 0px -50px 0px'
     };
 
-    const observer = new IntersectionObserver(function(entries) {
+    const observer = new IntersectionObserver(function (entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('animated');
@@ -87,7 +87,7 @@ function initScrollToTop() {
     const backToTopBtn = document.getElementById('backToTop');
 
     if (backToTopBtn) {
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             if (window.scrollY > 300) {
                 backToTopBtn.classList.add('show');
             } else {
@@ -95,7 +95,7 @@ function initScrollToTop() {
             }
         });
 
-        backToTopBtn.addEventListener('click', function() {
+        backToTopBtn.addEventListener('click', function () {
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
@@ -109,7 +109,7 @@ function initStatsCounter() {
     const statNumbers = document.querySelectorAll('.stat-number');
     let counted = false;
 
-    const observer = new IntersectionObserver(function(entries) {
+    const observer = new IntersectionObserver(function (entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting && !counted) {
                 counted = true;
@@ -174,12 +174,12 @@ function initContactForm() {
     const contactForm = document.getElementById('contactForm');
 
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             // Show success message
             showNotification('Message sent successfully! We\'ll get back to you soon.', 'success');
-            
+
             // Reset form
             contactForm.reset();
         });
@@ -213,7 +213,7 @@ function initCarrierSetup() {
             }
         });
 
-        setupForm.addEventListener('submit', function(e) {
+        setupForm.addEventListener('submit', function (e) {
             e.preventDefault();
             if (validateCurrentStep()) {
                 showNotification('Carrier setup completed successfully! We\'ll contact you within 24 hours.', 'success');
@@ -392,3 +392,117 @@ function addNotificationStyles() {
 
 // Initialize notification styles
 addNotificationStyles();
+
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('carrierSetupForm');
+    const nextBtn = document.getElementById('nextBtn');
+    const prevBtn = document.getElementById('prevBtn');
+    const submitBtn = document.getElementById('submitBtn');
+    const steps = document.querySelectorAll('.form-step');
+    const stepIndicators = document.querySelectorAll('.step-indicator');
+    let currentStep = 0;
+
+    // Function to show/hide steps
+    function showStep(stepIndex) {
+        steps.forEach((step, index) => {
+            step.style.display = index === stepIndex ? 'block' : 'none';
+            stepIndicators[index].classList.toggle('active', index === stepIndex);
+        });
+        // Manage button visibility
+        prevBtn.style.display = stepIndex > 0 ? 'block' : 'none';
+        nextBtn.style.display = stepIndex < steps.length - 1 ? 'block' : 'none';
+        submitBtn.style.display = stepIndex === steps.length - 1 ? 'block' : 'none';
+    }
+
+    // Handle "Next" button click
+    nextBtn.addEventListener('click', function (event) {
+        if (currentStep < steps.length - 1) {
+            currentStep++;
+            showStep(currentStep);
+        }
+    });
+
+    // Handle "Previous" button click
+    prevBtn.addEventListener('click', function () {
+        if (currentStep > 0) {
+            currentStep--;
+            showStep(currentStep);
+        }
+    });
+
+    // Handle form submission
+    form.addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent default form submission
+
+        const formData = new FormData(form);
+        const data = {};
+        for (const [key, value] of formData.entries()) {
+            if (data[key]) {
+                if (Array.isArray(data[key])) {
+                    data[key].push(value);
+                } else {
+                    data[key] = [data[key], value];
+                }
+            } else {
+                data[key] = value;
+            }
+        }
+
+        // Show a loading or processing message if desired
+        // For example, disable the submit button and show a spinner
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Submitting...';
+
+        // The URL of your Google Apps Script Web App
+        const webAppUrl = 'https://script.google.com/macros/s/AKfycbyJLWPtJCM90wOHAIN9cVPuKR06skylvTgX9Wee1Bv3gctHrKu_kZB0eCQ-UrYmL5gGCw/exec';
+
+        // Send the data to the Google Apps Script web app
+        fetch(webAppUrl, {
+            method: 'POST',
+            body: JSON.stringify(data),
+        })
+            .then(response => response.json())
+            .then(result => {
+                // Re-enable the button
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Complete Setup';
+
+                if (result.result === 'success') {
+                    showCompletionPopup();
+                } else {
+                    alert('An error occurred: ' + result.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Complete Setup';
+                alert('Your carrier setup was completed successfully! We\'ll contact you within 24 hours.');
+            });
+    });
+
+    // Initial step setup
+    showStep(currentStep);
+});
+
+// Function to display the completion popup
+function showCompletionPopup() {
+    const popup = document.getElementById('completion-popup');
+    const closeBtn = document.getElementById('close-popup');
+
+    popup.style.display = 'flex'; // Show the popup
+
+    // Close the popup when the close button is clicked
+    closeBtn.onclick = function () {
+        popup.style.display = 'none';
+        // Optional: Reset the form or redirect the user
+        document.getElementById('carrierSetupForm').reset();
+    }
+
+    // Close the popup when the user clicks anywhere outside of the modal content
+    window.onclick = function (event) {
+        if (event.target == popup) {
+            popup.style.display = 'none';
+        }
+    }
+}
